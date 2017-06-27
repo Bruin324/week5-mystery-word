@@ -24,6 +24,7 @@ router.use(expressValidator({
 }))
 
 router.post('/game', (request, response) => {
+    request.session.isCurrent = false;
     var model = request.session
     var guess = request.body.guess.toLowerCase();
     chosenWord = model.chosenWord;

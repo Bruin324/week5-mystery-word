@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const words = require('../models/words')
+const dictionary = require('../models/dictionary')
 
 router.get('/', (request, response) => {
     if (request.session.isCurrent != true) {
@@ -12,12 +12,16 @@ router.get('/', (request, response) => {
 });
 
 router.post('/', (request, response) => {
-    if (request.body.difficulty = 0) {
-        request.session.chosenWord = words.easy[Math.floor(Math.random() * (words.easy.length))];
-    } else if (request.body.difficulty = 1) {
-        request.session.chosenWord = words.normal[Math.floor(Math.random() * (words.normal.length))];
-    } else if (request.body.difficulty = 0) {
-        request.session.chosenWord = words.hard[Math.floor(Math.random() * (words.hard.length))];
+    console.log(request.body.difficulty);
+    if (request.body.difficulty === '0') {
+        console.log('get easy');
+        request.session.chosenWord = dictionary.easy[Math.floor(Math.random() * (dictionary.easy.length))];
+    } else if (request.body.difficulty === '1') {
+        console.log('get normal');
+        request.session.chosenWord = dictionary.normal[Math.floor(Math.random() * (dictionary.normal.length))];
+    } else if (request.body.difficulty === '2') {
+        console.log('get hard');
+        request.session.chosenWord = dictionary.hard[Math.floor(Math.random() * (dictionary.hard.length))];
     }
     request.session.displayWord = [];
     for (i = 0; i < request.session.chosenWord.length; i++) {
@@ -25,7 +29,6 @@ router.post('/', (request, response) => {
     }
     request.session.incorrectGuesses = 8;
     request.session.allGuesses = [];
-    request.session.isCurrent = true;
     request.session.numCorrectLetters = 0;
     console.log(request.session.chosenWord);
     var model = request.session

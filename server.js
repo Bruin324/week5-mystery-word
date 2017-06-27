@@ -9,7 +9,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 const session = require('express-session');
-const words = require ('./models/words')
 
 const homeController = require('./controllers/home-controller')
 const gameController = require('./controllers/game-controller')

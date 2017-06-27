@@ -19,7 +19,7 @@ router.get('/winners', (request,response) => {
 });
 
 router.post('/winners', (request, response) => {
-    if (request.session.isCurrent != true) {
+    if (request.session.isCurrent !=true) {
         var newWinner = { name: request.body.winner, guesses: request.session.incorrectGuesses, word: request.session.chosenWord };
         if (winnersList.length === 0) {
             winnersList.push(newWinner);
@@ -43,8 +43,12 @@ router.post('/winners', (request, response) => {
 })
 
 router.get('/game-lost', (request, response) => {
-    var model = request.session;
-    response.render('game-lost', model)
+    if (request.session.isCurrent !=true) {
+        var model = request.session;
+        response.render('game-lost', model)
+    } else {
+        response.redirect('/');
+    }
 })
 
 module.exports = router;
