@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Mystery Word</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <div>Mystery Word</div>
+        <div>You have {{incorrectGuesses}} incorrect guesses left</div>
+    </header>
+    <div class='game-play'>
+        <p class="display-word">
+            {{#displayWord}}<span>{{.}} </span>{{/displayWord}}
+        </p>
+        <form method='post' action='/game'>
+            <input type="text" name="guess" placeholder="Pick a Letter" class = 'input' autofocus>
+            <button type="submit" class = 'submit'>Guess!!</button> {{#error}}{{msg}}{{/error}}
+        </form>
+        <p>Letters Guessed: {{#allGuesses}}{{.}},{{/allGuesses}}</p>
+    </div>
+
+
+</body>
+
+</html>

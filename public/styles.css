@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Permanent+Marker|Walter+Turncoat');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /*background-color: red;*/
+    margin: 0;
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 36px;
+}
+
+.center-wrapper {
+    display:flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.home-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered {
+    text-align: center;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.game-play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 36px;
+    outline: none;
+
+}
+
+.submit {
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 36px;
+}
+
+.display-word {
+    text-align: center;
+}
+
+.won-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

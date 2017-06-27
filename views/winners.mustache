@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>Mystery Word Winners!</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    All the Winners!!
+    <p><a href="/game">Play Again?</a></p>
+    <ol>
+        {{#winnersList}}
+        <li>
+            {{name}} - Guesses Left: {{guesses}}, word: {{word}}
+        </li>
+        {{/winnersList}}
+    </ol>
+</body>
+
+</html>

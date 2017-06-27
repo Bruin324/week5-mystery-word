@@ -1,0 +1,16 @@
+<html>
+    <head>
+       <title>Mystery Word</title> 
+       <link rel="stylesheet" type="" href="/styles.css">
+    </head> 
+    <body>
+        <div class='won-wrapper'>
+        <div>You Won!</div>
+        <div>You guessed all the letters in "{{chosenWord}}"</div>
+        <form method='post' action='/winners'>
+            <input type="text" class = 'input' name="winner" placeholder="Enter Your Name To Record Your Win" autofocus>
+        </form>
+        <a href="/game">Play Again?</a>
+        </div>
+    </body>
+</html>

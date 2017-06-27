@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Mystery Word</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="center-wrapper">
+        <div class="centered">I'm thinking of a word. Can you guess it?</div>
+        <form method="POST" action="/" class = 'home-form'>
+            <div class="difficulty">
+                <label>
+                    <input type="radio" name="difficulty" value=0>Easy Words</input>
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value=1>Normal Words</input>
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value=2>Hard Words</input>
+                </label>
+            </div>
+            <button class="submit centered" type="submit">Let me guess!</button>
+        </form>
+        <a href="/winners" class='centered'>See all the Winners!</a>
+    </div>
+</body>
+
+</html>
